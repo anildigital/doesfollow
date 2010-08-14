@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{doesfollow}
-  s.version = "0.0.0"
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Anil Wadghule"]
@@ -26,6 +26,7 @@ Gem::Specification.new do |s|
      "Rakefile",
      "VERSION",
      "bin/doesfollow",
+     "doesfollow.gemspec",
      "lib/doesfollow.rb",
      "spec/doesfollow_spec.rb",
      "spec/spec.opts",
