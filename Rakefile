@@ -15,7 +15,6 @@ begin
     gem.add_development_dependency "json", ">= 1.4.4"
     gem.executables = %w(doesfollow)
 
-  spec.libs << 'lib' << 'spec'
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new
