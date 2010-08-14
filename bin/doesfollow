@@ -1,0 +1,23 @@
+#!/usr/bin/env ruby
+require 'rubygems'
+$:.unshift File.dirname(__FILE__) + "/../lib"
+require 'doesfollow'
+
+if ARGV[0].nil? or ARGV[1].nil?
+  puts "USAGE: doesfollow username1 username2"
+  puts "It will output status of does username1 follow username2"
+  exit(1)
+end
+
+doesfollow_strategy = DoesFollowConsole.new
+doesfollow_strategy.output_streamer = $stdout         
+
+users = DoesFollow.new(ARGV[0], ARGV[1])
+users.does_follow_strategy(doesfollow_strategy)
+
+begin
+  users.doesfollow
+rescue RestClient::ResourceNotFound
+  puts "Looks one of the usernames does not exist! Please try again with valid username.\n\n"
+  exit(0)
+end

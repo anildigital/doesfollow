@@ -1,6 +1,15 @@
 = doesfollow
 
-Description goes here.
+A simple gem to show does follow status of Twitter users.
+
+== Usage
+
+$ doesfollow username1 username2
+Yup
+
+$ doesfollow username2 username1
+Nope
+
 
 == Note on Patches/Pull Requests
  

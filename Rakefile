@@ -5,12 +5,17 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "doesfollow"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = "Simple gem to show 'does follow' status of twitter users"
+    gem.description = "Simple gem to show 'does follow' status of twitter users."
     gem.email = "anildigital@gmail.com"
     gem.homepage = "http://github.com/anildigital/doesfollow"
     gem.authors = ["Anil Wadghule"]
     gem.add_development_dependency "rspec", ">= 1.2.9"
+    gem.add_development_dependency "rest-client", ">= 1.6.0"
+    gem.add_development_dependency "json", ">= 1.4.4"
+    gem.executables = %w(doesfollow)
+
+  spec.libs << 'lib' << 'spec'
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new
