@@ -10,11 +10,10 @@ begin
     gem.email = "anildigital@gmail.com"
     gem.homepage = "http://github.com/anildigital/doesfollow"
     gem.authors = ["Anil Wadghule"]
+    gem.add_dependency "rest-client", ">= 1.6.0"
+    gem.add_dependency "json", ">= 1.4.4"
     gem.add_development_dependency "rspec", ">= 1.2.9"
-    gem.add_development_dependency "rest-client", ">= 1.6.0"
-    gem.add_development_dependency "json", ">= 1.4.4"
     gem.executables = %w(doesfollow)
-
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new
