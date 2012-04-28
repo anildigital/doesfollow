@@ -1,23 +1,27 @@
 #!/usr/bin/env ruby
 require 'rubygems'
-$:.unshift File.dirname(__FILE__) + "/../lib"
+
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib', 'strategies'))
+
 require 'doesfollow'
+require 'doesfollow-console'
 
 if ARGV[0].nil? or ARGV[1].nil?
-  puts "USAGE: doesfollow username1 username2"
-  puts "It will output status of does username1 follow username2"
+  puts "USAGE: doesfollow source_screen_name target_screen_name"
+  puts "It will output status of does source_screen_name follow target_screen_name"
   exit(1)
 end
 
-doesfollow_strategy = DoesfollowConsole.new
+doesfollow_strategy = Strategies::Console.new
 doesfollow_strategy.output_streamer = $stdout         
 
 users = Doesfollow.new(ARGV[0], ARGV[1])
-users.does_follow_strategy(doesfollow_strategy)
+users.doesfollow_strategy(doesfollow_strategy)
 
 begin
   users.doesfollow
-rescue RestClient::ResourceNotFound
-  puts "Looks one of the usernames does not exist! Please try again with valid username.\n\n"
+rescue RestClient::Forbidden, RestClient::ResourceNotFound
+  puts "Looks one of the Twitter screen names passed does not exist! Please try again with valid screen name.\n\n"
   exit(0)
 end

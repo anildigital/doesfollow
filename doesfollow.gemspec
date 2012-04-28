@@ -11,7 +11,7 @@ Gem::Specification.new do |gem|
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.name          = "doesfollow"
-  gem.require_paths = ["lib"]
+  gem.require_paths = ["lib", "lib/strategies"]
   gem.version       = DoesFollow::VERSION
 
 
