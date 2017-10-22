@@ -1,7 +1,7 @@
-module Strategies
-  #
-  # Doesfollow console strategy
-  #
+#
+# Doesfollow console strategy
+#
+module Strategy
   class Console
     attr :output_streamer, true
 
